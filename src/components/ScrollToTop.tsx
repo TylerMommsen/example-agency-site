@@ -1,0 +1,14 @@
+'use client'
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+/** Resets window scroll to top on every route change. */
+export const ScrollToTop = () => {
+  const pathname = usePathname();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+  return null;
+};
+
+export default ScrollToTop;

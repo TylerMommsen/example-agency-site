@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BuildFlow Design System
+   All colors HSL. Brand:
+   Navy #0A2540, Teal #00C4B4, Orange #FF6B35, Dark #1E2937, LightBG #F8FAFC
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;          /* #F8FAFC */
+    --foreground: 215 28% 17%;          /* #1E2937 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 211 82% 15%;             /* Deep Navy #0A2540 */
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 211 70% 25%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 211 82% 15%;
+
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 174 100% 38%;             /* Teal #00C4B4 */
+    --accent-foreground: 211 82% 15%;
+
+    --cta: 16 100% 60%;                 /* Orange #FF6B35 */
+    --cta-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 24% 88%;
+    --input: 214 24% 88%;
+    --ring: 174 100% 38%;
+
+    --radius: 0.625rem;
+
+    --shadow-elegant: 0 10px 30px -10px hsl(211 82% 15% / 0.18);
+    --shadow-card: 0 4px 16px -6px hsl(211 82% 15% / 0.10);
+    --gradient-hero: linear-gradient(135deg, hsl(211 82% 12%) 0%, hsl(211 82% 18%) 55%, hsl(174 90% 22%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(16 100% 60%), hsl(20 100% 55%));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 211 82% 8%;
+    --foreground: 210 40% 98%;
+    --card: 211 60% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 211 60% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 174 100% 38%;
+    --primary-foreground: 211 82% 12%;
+    --secondary: 211 40% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 211 40% 18%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 174 100% 38%;
+    --accent-foreground: 211 82% 12%;
+    --cta: 16 100% 60%;
+    --cta-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 211 40% 22%;
+    --input: 211 40% 22%;
+    --ring: 174 100% 38%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Sora', 'Inter', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .container-tight { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .container-wide { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section-y { @apply py-16 md:py-24; }
+  .text-balance { text-wrap: balance; }
+  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-cta-gradient { background: var(--gradient-cta); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card-soft { box-shadow: var(--shadow-card); }
+}
